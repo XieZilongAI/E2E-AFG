@@ -53,7 +53,7 @@ and store into the `./datasets/${name}` directory. [Here](https://drive.google.c
 
 
 ## Generate Pseudo-answer
-We will first download [Llama-3-8B-Instruct](nihaomur/Meta-Llama-3-8B-Instruct-Q5_K_M.gguf) from HuggingFace and install [llama.cpp](https://github.com/ggerganov/llama.cpp). After that, we will follow the instructions to run the downloaded Llama-3 model.
+We will first download [Llama-3-8B-Instruct](https://huggingface.co/nihaomur/Meta-Llama-3-8B-Instruct-Q5_K_M.gguf) from HuggingFace and install [llama.cpp](https://github.com/ggerganov/llama.cpp). After that, we will follow the instructions to run the downloaded Llama-3 model.
 ```bash
 huggingface-cli download --resume-download nihaomur/Meta-Llama-3-8B-Instruct-Q5_K_M.gguf --local-dir /home/user/pretrained_model/Llama-3-8B-Instruct/ --local-dir-use-symlinks False
 CUDA_VISIBLE_DEVICES=1 ./llama-server -m /home/user/pretrained_model/Llama-3-8B-Instruct/Meta-Llama-3-8B-Instruct-Q5_K_M.gguf -n 1024 -ngl 40 --host 0.0.0.0 --port 8084 -fa
